@@ -91,7 +91,7 @@ inter = 0;
 
 
 function numero(xx) {
-    if (x.length <= 8) {
+   
         if (x == "0" || xi == 1) {
             pantalla.innerHTML = xx;
             x = xx;
@@ -116,8 +116,7 @@ function numero(xx) {
         }
         xi = 0
        
-    }
-}
+   }
 
 function operar(s) {
     igualar() 
