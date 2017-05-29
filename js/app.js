@@ -87,12 +87,11 @@ xi = 1; //iniciar número en pantalla: 1=si; 0=no;
 coma = 0; //estado coma decimal 0=no, 1=si;
 ni = 0; //número oculto o en espera.
 op = "no"; //operación en curso; "no" =  sin operación.
+inter = 0;
 
 
 function numero(xx) {
     if (x.length <= 8) {
-        
-
         if (x == "0" || xi == 1) {
             pantalla.innerHTML = xx;
             x = xx;
@@ -111,35 +110,38 @@ function numero(xx) {
             else if (xx == "." && coma == 1) { }
             else {
                 pantalla.innerHTML += xx;
-                x += xx
+                x += xx;
+                coma = 0;//cambiar el estado de la coma 
             }
         }
         xi = 0
-        x.length = 8;
+       
     }
 }
 
 function operar(s) {
     igualar() 
-    ni = x 
+    ni = x; 
     op = s; 
     xi = 1; 
-}
+    
+    }   
+
 function igualar() {
     if (op == "no") { 
-      		
+      		pantalla.innerHTML = x;
     }
     else { 
         sl = ni + op + x; 
-        sol = eval(sl) 
+        sol = eval(sl);
         pantalla.innerHTML = sol
         x = sol; 
         op = "no"; 
         xi = 1;
-        x.toPrecision(8);
-        
+        inter = x
     }
 }
+
 function raizc() {
     
     x = Math.sqrt(x) 
