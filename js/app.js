@@ -1,4 +1,3 @@
-
 document.getElementById("0").addEventListener("click", function () {
     numero("0");
 });
@@ -87,10 +86,8 @@ xi = 1; //iniciar número en pantalla: 1=si; 0=no;
 coma = 0; //estado coma decimal 0=no, 1=si;
 ni = 0; //número oculto o en espera.
 op = "no"; //operación en curso; "no" =  sin operación.
-inter = 0;
 
-
-function numero(xx) {
+function numero(xx,efecto) {
    
         if (x == "0" || xi == 1) {
             pantalla.innerHTML = xx;
@@ -99,7 +96,7 @@ function numero(xx) {
                 pantalla.innerHTML = "0.";
                 x = xx;
                 coma = 1;
-            }
+            } 
         }
         else {
             if (xx == "." && coma == 0) {
@@ -112,7 +109,7 @@ function numero(xx) {
                 pantalla.innerHTML += xx;
                 x += xx;
                 coma = 0;//cambiar el estado de la coma 
-            }
+            } 
         }
         xi = 0
        
@@ -137,7 +134,6 @@ function igualar() {
         x = sol; 
         op = "no"; 
         xi = 1;
-        inter = x
     }
 }
 
